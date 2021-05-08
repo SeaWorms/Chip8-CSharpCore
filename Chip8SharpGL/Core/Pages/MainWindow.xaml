@@ -1,0 +1,171 @@
+﻿<Window x:Class="Chip8SharpGL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Chip8SharpGL.Core.ViewModel"
+        xmlns:sharpGL="clr-namespace:SharpGL.WPF;assembly=SharpGL.WPF"
+        mc:Ignorable="d"
+        Title="Chip 8" Height="500" Width="800">
+
+    <Window.Resources>
+        <vm:MainViewModel x:Key="viewModel"></vm:MainViewModel>
+        <FontFamily x:Key="Pixel">/Chip8SharpGL;component/Resource/Font/#basis33</FontFamily>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource viewModel}"></Binding>
+    </Window.DataContext>
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"></RowDefinition>
+            <RowDefinition Height="45*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <sharpGL:OpenGLControl
+                Name="OutputWindow"
+                OpenGLDraw="OpenGLControl_OpenGLDraw" 
+                OpenGLInitialized="OpenGLControl_OpenGLInitialized"
+                Resized="OutputWindow_Resized"
+                ></sharpGL:OpenGLControl>
+        </Grid>
+
+        <Grid Background="Black" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="Gray" Margin="1">
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V0 = #"/>
+                    <Run Text="{Binding Path=V[0], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V1 = #"/>
+                    <Run Text="{Binding Path=V[1], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V2 = #"/>
+                    <Run Text="{Binding Path=V[2], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V3 = #"/>
+                    <Run Text="{Binding Path=V[3], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V4 = #"/>
+                    <Run Text="{Binding Path=V[4], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V5 = #"/>
+                    <Run Text="{Binding Path=V[5], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V6 = #"/>
+                    <Run Text="{Binding Path=V[6], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V7 = #"/>
+                    <Run Text="{Binding Path=V[7], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V8 = #"/>
+                    <Run Text="{Binding Path=V[8], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="V9 = #"/>
+                    <Run Text="{Binding Path=V[9], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="VA = #"/>
+                    <Run Text="{Binding Path=V[10], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="VB = #"/>
+                    <Run Text="{Binding Path=V[11], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="VC = #"/>
+                    <Run Text="{Binding Path=V[12], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="VD = #"/>
+                    <Run Text="{Binding Path=V[13], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="VE = #"/>
+                    <Run Text="{Binding Path=V[14], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <Run FontWeight="Bold" Text="VF = #"/>
+                    <Run Text="{Binding Path=V[15], StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Background="Gray" Margin="1">
+                <StackPanel >
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                            <Run FontWeight="Bold" Text="I = #"/>
+                            <Run Text="{Binding Path=I, StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                            <Run FontWeight="Bold" Text="PC = #"/>
+                            <Run Text="{Binding Path=PC, StringFormat={}{0:X4}}"/>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid Background="Black" Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="20*"></ColumnDefinition>
+                <ColumnDefinition Width="80*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Background="Gray" Grid.Column="0" Margin="1">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Width="50" Height="30" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="LoadButton_Click" ToolTip="Load ROM">
+                        <Image Source="/Chip8SharpGL;component/Resource/Img/Sprite-LoadProgramm.png" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                    </Button>
+                    <Button Width="50" Height="30" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="StartButton_Click" ToolTip="Start">
+                        <Image Source="/Chip8SharpGL;component/Resource/Img/Sprite-Start.png" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                    </Button>
+                    <Button Width="50" Height="30" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="NextStepButton_Click" ToolTip="Next">
+                        <Image Source="/Chip8SharpGL;component/Resource/Img/Sprite-Next.png" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                    </Button>
+                    <Button Width="50" Height="30" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="PauseButton_Click" ToolTip="Pause">
+                        <Image Source="/Chip8SharpGL;component/Resource/Img/Sprite-Pause.png" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Background="Gray" Grid.Column="1" Margin="1">
+                <StackPanel>
+                    <WrapPanel Margin="10">
+                        <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                            <Run FontWeight="Bold" Text="Hertz = "/>
+                        </TextBlock>
+                        <TextBox x:Name="Hertz" Text="500" Width="100" FontFamily="{StaticResource Pixel}" FontSize="16" PreviewTextInput="NumberValidationTextBox" TextChanged="HertzTextChanged"></TextBox>
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid Background="Black" Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="1">
+                <TextBlock Background="Gray" Text="{Binding OutTextMemory}" FontFamily="{StaticResource Pixel}" FontSize="16"></TextBlock>
+            </Grid>
+            <Grid Grid.Column="1" Margin="1">
+                <TextBlock Background="Gray" Text="{Binding Log}" FontFamily="{StaticResource Pixel}" FontSize="16" ></TextBlock>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

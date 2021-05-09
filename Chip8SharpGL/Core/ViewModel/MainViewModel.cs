@@ -245,7 +245,7 @@ namespace Chip8SharpGL.Core.ViewModel
             int StartMemory = PC - 6;
 
             StringBuilder OutputBuilder = new StringBuilder();
-            OutputBuilder.Append($"|Address| PC | Value |");
+            OutputBuilder.AppendLine($"|Address| PC | Value |");
             OutputBuilder.AppendLine($"|=======|====|=======|");
 
             string counter;

@@ -75,5 +75,10 @@ namespace Chip8SharpGL
                 ViewModel.SetClockFrequency(int.Parse(Hertz.Text));
         }
 
+        private void InputButtonHandrel(object sender, RoutedEventArgs e)
+        {
+            ViewModel.ButtonInputHandel(((Button)sender).Tag.ToString());
+        }
+
     }
 }

@@ -144,12 +144,41 @@
             </Grid>
             <Grid Background="Gray" Grid.Column="1" Margin="1">
                 <StackPanel>
-                    <WrapPanel Margin="10">
-                        <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
+                    <StackPanel>
+                        <WrapPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" FontFamily="{StaticResource Pixel}" FontSize="16">
                             <Run FontWeight="Bold" Text="Hertz = "/>
-                        </TextBlock>
-                        <TextBox x:Name="Hertz" Text="500" Width="100" FontFamily="{StaticResource Pixel}" FontSize="16" PreviewTextInput="NumberValidationTextBox" TextChanged="HertzTextChanged"></TextBox>
-                    </WrapPanel>
+                            </TextBlock>
+                            <TextBox x:Name="Hertz" Text="500" Width="100" FontFamily="{StaticResource Pixel}" FontSize="16" PreviewTextInput="NumberValidationTextBox" TextChanged="HertzTextChanged"></TextBox>
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="1">1</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="2">2</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="3">3</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="C">C</Button>
+                        </WrapPanel>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="4">4</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="5">5</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="6">6</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="D">D</Button>
+                        </WrapPanel>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="7">7</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="8">8</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="9">9</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="E">E</Button>
+                        </WrapPanel>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="A">A</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="0">0</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="B">B</Button>
+                            <Button Width="40" Height="25" Margin="5" FontFamily="{StaticResource Pixel}" FontSize="16" Click="InputButtonHandrel" Tag="F">F</Button>
+                        </WrapPanel>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Grid>

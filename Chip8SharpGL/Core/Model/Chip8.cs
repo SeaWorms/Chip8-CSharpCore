@@ -141,6 +141,7 @@ namespace Chip8SharpGL.Core.Model
             CommandDecode();
             DecrementTimer();
             IncrementProgrammCounter();
+            SetKeyPress(false);
 
             //output
             OutputImage(VideoBuffer);
@@ -180,6 +181,10 @@ namespace Chip8SharpGL.Core.Model
                     Memory[StartProgrammAdress + i] = ROM[i];
 
         }
+
+        public void SetKey(byte x) => InputKey = x;
+
+        public void SetKeyPress(bool x) => KeyPress = x;
 
         public void PauseRun() => checkRun = false;
         public void StartRun() => checkRun = true;

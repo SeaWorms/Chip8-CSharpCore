@@ -92,6 +92,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Core\BaseClass\DelegateCommand.cs" />
     <Compile Include="Core\BaseClass\ViewModelBase.cs" />
     <Compile Include="Core\Model\Chip8.cs" />
     <Compile Include="Core\Pages\MainWindow.xaml.cs">

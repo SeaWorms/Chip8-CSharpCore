@@ -9,11 +9,32 @@ using System.Drawing.Imaging;
 using System.Threading;
 using Chip8SharpGL.Core.Model;
 using Microsoft.Win32;
+using Chip8SharpGL.Core.BaseClass;
+using System.Linq;
 
 namespace Chip8SharpGL.Core.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
+        public enum Numeric : byte
+        {
+            One,
+            Two,
+            Three,
+            Four,
+            Five,
+            Six,
+            Seven,
+            Eight,
+            Nune,
+            A,
+            B,
+            C,
+            D,
+            E,
+            F
+        }
+
         readonly SynchronizationContext _synchronizationContext = SynchronizationContext.Current;
         Chip8 controller;
         Thread threadChip;
@@ -283,5 +304,15 @@ namespace Chip8SharpGL.Core.ViewModel
 
         private string AppendLine(string BaseString, string NewLine) => BaseString + Environment.NewLine + NewLine;
 
+        public void ButtonInputHandel(string parametr)
+        {
+            if (string.IsNullOrEmpty(parametr))
+                return;
+
+            var inputKey = Enum.GetValues(typeof(Numeric)).Cast<byte>().Where(x => x == Convert.ToByte(parametr, 16)).ToArray().First();
+
+            controller.SetKey(inputKey);
+            controller.SetKeyPress(true);
+        }
     }
 }
